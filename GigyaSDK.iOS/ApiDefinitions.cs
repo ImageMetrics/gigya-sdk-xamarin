@@ -486,12 +486,12 @@ namespace GigyaSDK.iOS
 		// +(void)initWithAPIKey:(NSString *)apiKey application:(UIApplication *)application launchOptions:(NSDictionary *)launchOptions;
 		[Static]
 		[Export ("initWithAPIKey:application:launchOptions:")]
-		void InitWithAPIKey (string apiKey, UIApplication application, NSDictionary launchOptions);
+		void InitWithAPIKey (string apiKey, UIApplication application, [NullAllowed] NSDictionary launchOptions);
 
 		// +(void)initWithAPIKey:(NSString *)apiKey application:(UIApplication *)application launchOptions:(NSDictionary *)launchOptions APIDomain:(NSString *)apiDomain;
 		[Static]
 		[Export ("initWithAPIKey:application:launchOptions:APIDomain:")]
-		void InitWithAPIKey (string apiKey, UIApplication application, NSDictionary launchOptions, string apiDomain);
+		void InitWithAPIKey (string apiKey, UIApplication application, [NullAllowed] NSDictionary launchOptions, string apiDomain);
 
 		// +(NSString *)APIKey;
 		[Static]
@@ -560,7 +560,7 @@ namespace GigyaSDK.iOS
 		// +(void)showLoginDialogOver:(UIViewController *)viewController provider:(NSString *)provider parameters:(NSDictionary *)parameters completionHandler:(GSUserInfoHandler)handler __attribute__((deprecated("Use loginToProvider:parameters:completionHandler: instead")));
 		[Static]
 		[Export ("showLoginDialogOver:provider:parameters:completionHandler:")]
-		void ShowLoginDialogOver (UIViewController viewController, string provider, NSDictionary parameters, GSUserInfoHandler handler);
+		void ShowLoginDialogOver (UIViewController viewController, string provider, [NullAllowed] NSDictionary parameters, GSUserInfoHandler handler);
 
 		// +(void)loginToProvider:(NSString *)provider parameters:(NSDictionary *)parameters over:(UIViewController *)viewController completionHandler:(GSUserInfoHandler)handler;
 		[Static]
@@ -581,13 +581,13 @@ namespace GigyaSDK.iOS
 		[Static]
 		[Export ("showLoginProvidersDialogOver:providers:parameters:completionHandler:")]
 		//[Verify (StronglyTypedNSArray)]
-		void ShowLoginProvidersDialogOver (UIViewController viewController, NSObject[] providers, NSDictionary parameters, GSUserInfoHandler handler);
+		void ShowLoginProvidersDialogOver (UIViewController viewController, [NullAllowed] NSObject[] providers,[NullAllowed] NSDictionary parameters, GSUserInfoHandler handler);
 
 		// +(void)showLoginProvidersPopoverFrom:(UIView *)view providers:(NSArray *)providers parameters:(NSDictionary *)parameters completionHandler:(GSUserInfoHandler)handler;
 		[Static]
 		[Export ("showLoginProvidersPopoverFrom:providers:parameters:completionHandler:")]
 		//[Verify (StronglyTypedNSArray)]
-		void ShowLoginProvidersPopoverFrom (UIView view, NSObject[] providers, NSDictionary parameters, GSUserInfoHandler handler);
+		void ShowLoginProvidersPopoverFrom (UIView view, [NullAllowed] NSObject[] providers, [NullAllowed] NSDictionary parameters, GSUserInfoHandler handler);
 
 		// +(void)logout;
 		[Static]
